@@ -42,6 +42,8 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "dev.emir.finance_app"
@@ -53,11 +55,28 @@ android {
         versionName flutterVersionName
     }
 
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {
+            dimension "app"
+            resValue "string", "app_name", "Finance App Dev"
+            versionNameSuffix "-dev"
+        }
+
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "Finance App"
+            applicationId "dev.emir.finance_app"
         }
     }
 }

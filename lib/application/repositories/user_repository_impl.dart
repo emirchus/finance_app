@@ -20,7 +20,7 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   @override
-  Future<UserEntity> get(String id) async {
+  Future<UserEntity?> get([String? id]) async {
     final user = await consumer.load(DatabaseEntity.user, id);
 
     return UserEntity.fromJson(user);

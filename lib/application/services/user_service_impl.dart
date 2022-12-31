@@ -12,8 +12,8 @@ class UserServiceImpl extends UserService {
   @override
   Future<void> authenticate(AuthEnum authEnum, [String? email, String? password]) async {
     assert(
-      authEnum == AuthEnum.email && (email == null || password == null),
-      'Email and password must be provided for email authentication',
+      authEnum == AuthEnum.email && email != null && password != null || authEnum != AuthEnum.email && email == null && password == null,
+      'Email and password must be provided for AuthEnum.email',
     );
 
     UserEntity? userEntity;

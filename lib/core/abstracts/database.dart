@@ -11,7 +11,7 @@ abstract class LocalDatabase<T> extends Consumer {
 
   Future<void> save(DatabaseEntity key, Entity value);
 
-  Future<Entity> load(DatabaseEntity key, String search);
+  Future<Entity> load(DatabaseEntity key, String? search);
 
   Future<Entities> loadAll(DatabaseEntity key, [Map<String, dynamic>? query]);
 

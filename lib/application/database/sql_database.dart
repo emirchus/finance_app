@@ -58,7 +58,7 @@ class SQLDatabase extends LocalDatabase<Database> {
   }
 
   @override
-  Future<void> delete(DatabaseEntity key, String search) async{
+  Future<void> delete(DatabaseEntity key, String search) async {
     await _database.delete(
       key.name,
       where: 'id = ?',
@@ -69,14 +69,20 @@ class SQLDatabase extends LocalDatabase<Database> {
   }
 
   @override
-  Future<Entity> load(DatabaseEntity key, String search) async {
-    final List<Map<String, dynamic>> maps = await _database.query(
-      key.name,
-      where: 'id = ?',
-      whereArgs: [
-        search,
-      ],
-    );
+  Future<Entity> load(DatabaseEntity key, String? search) async {
+    List<Map<String, dynamic>>? maps;
+
+    if (search != null) {
+      maps = await _database.query(
+        key.name,
+        where: 'id = ?',
+        whereArgs: [
+          search,
+        ],
+      );
+    }
+
+    maps ??= await _database.query(key.name);
 
     if (maps.isNotEmpty) {
       return maps.first;

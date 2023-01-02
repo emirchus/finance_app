@@ -7,6 +7,7 @@ class UserRepositoryImpl extends UserRepository {
 
   @override
   Future<UserEntity> add(UserEntity item) async {
+
     await consumer.save(DatabaseEntity.user, item.toJson());
 
     return item;

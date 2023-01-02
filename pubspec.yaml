@@ -23,6 +23,10 @@ dependencies:
   google_sign_in: ^5.4.2
   either_dart: ^0.3.0
   get_it: ^7.2.0
+  firebase_database: ^10.0.9
+  rive: ^0.10.0
+  phosphor_flutter: ^1.4.0
+  async: ^2.9.0
 
 dev_dependencies:
   flutter_test:

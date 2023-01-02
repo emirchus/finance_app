@@ -18,8 +18,5 @@ abstract class Server extends Consumer {
     Map<String, dynamic>? body,
   ]);
 
-  Future<Map<String, dynamic>> delete(
-    String path, [
-    Map<String, dynamic>? body,
-  ]);
+  Future<Map<String, dynamic>> delete(String path);
 }

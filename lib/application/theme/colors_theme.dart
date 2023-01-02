@@ -13,7 +13,7 @@ const Color errorColor = Color(0xFFEF5764);
 const Color onErrorColor = Color(0xff080708);
 
 const Color backgroundColor = Color(0xFFFFFFFF);
-const Color onBackgroundColor = Color(0xffF5F5F5);
+const Color onBackgroundColor = Color(0xFFFFFFFF);
 
 const Color surfaceColor = Color(0xffefbec1);
 const Color onSurfaceColor = Color(0xff080708);

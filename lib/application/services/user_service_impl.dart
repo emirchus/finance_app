@@ -28,6 +28,14 @@ class UserServiceImpl extends UserService {
       default:
         throw Exception('AuthEnum not implemented');
     }
+    final userServer = await consumer.get("users/${userEntity.id}");
+
+    if (userServer["data"] == null) {
+      await consumer.post(
+        "users/${userEntity.id}",
+        userEntity.toJson(),
+      );
+    }
 
     await userRepository.add(userEntity);
   }

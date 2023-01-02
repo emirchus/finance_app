@@ -22,7 +22,7 @@ class DevInjector extends Injector {
   @override
   Future<void> init() async {
     final LocalDatabase database = SQLDatabase();
-    final Server server = FirebaseConsumer();
+    const Server server = FirebaseConsumer();
 
     await Future.wait([
       database.init(),
